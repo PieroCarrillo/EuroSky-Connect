@@ -1,0 +1,9 @@
+scenario,algorithm,route,total_minutes,revenue,total_cost,net_profit,runtime_us,feasible
+base,greedy,MAD->LIS->LHR->MAD,475,82530.00,58306.65,24223.35,14,true
+base,branch-bound,MAD->CDG->LHR->MAD,435,88715.00,54808.60,33906.40,26,true
+high-demand,greedy,MAD->LIS->LHR->MAD,475,100525.00,58306.65,42218.35,1,true
+high-demand,branch-bound,MAD->CDG->LHR->MAD,435,107100.00,54808.60,52291.40,22,true
+high-fuel,greedy,MAD->LIS->LHR->MAD,475,82530.00,72413.98,10116.02,1,true
+high-fuel,branch-bound,MAD->CDG->LHR->MAD,435,88715.00,67691.61,21023.39,19,true
+restricted,greedy,MAD->LIS->LHR->MAD,475,74290.00,62337.32,11952.68,2,true
+restricted,branch-bound,MAD->LHR->LIS->MAD,475,75165.00,62447.32,12717.68,18,true

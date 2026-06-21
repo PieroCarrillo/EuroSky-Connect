@@ -1,0 +1,10 @@
+[
+  {"scenario":"base","algorithm":"greedy","route":"MAD->LIS->LHR->MAD","total_minutes":475,"revenue":82530.00,"total_cost":58306.65,"net_profit":24223.35,"runtime_us":14,"feasible":true},
+  {"scenario":"base","algorithm":"branch-bound","route":"MAD->CDG->LHR->MAD","total_minutes":435,"revenue":88715.00,"total_cost":54808.60,"net_profit":33906.40,"runtime_us":26,"feasible":true},
+  {"scenario":"high-demand","algorithm":"greedy","route":"MAD->LIS->LHR->MAD","total_minutes":475,"revenue":100525.00,"total_cost":58306.65,"net_profit":42218.35,"runtime_us":1,"feasible":true},
+  {"scenario":"high-demand","algorithm":"branch-bound","route":"MAD->CDG->LHR->MAD","total_minutes":435,"revenue":107100.00,"total_cost":54808.60,"net_profit":52291.40,"runtime_us":22,"feasible":true},
+  {"scenario":"high-fuel","algorithm":"greedy","route":"MAD->LIS->LHR->MAD","total_minutes":475,"revenue":82530.00,"total_cost":72413.98,"net_profit":10116.02,"runtime_us":1,"feasible":true},
+  {"scenario":"high-fuel","algorithm":"branch-bound","route":"MAD->CDG->LHR->MAD","total_minutes":435,"revenue":88715.00,"total_cost":67691.61,"net_profit":21023.39,"runtime_us":19,"feasible":true},
+  {"scenario":"restricted","algorithm":"greedy","route":"MAD->LIS->LHR->MAD","total_minutes":475,"revenue":74290.00,"total_cost":62337.32,"net_profit":11952.68,"runtime_us":2,"feasible":true},
+  {"scenario":"restricted","algorithm":"branch-bound","route":"MAD->LHR->LIS->MAD","total_minutes":475,"revenue":75165.00,"total_cost":62447.32,"net_profit":12717.68,"runtime_us":18,"feasible":true}
+]

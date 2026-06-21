@@ -1,0 +1,8 @@
+/build/
+/work/
+/outputs/
+/.vs/
+*.user
+*.suo
+~$*.docx
+.env
