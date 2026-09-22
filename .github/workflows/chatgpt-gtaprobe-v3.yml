@@ -1,0 +1,40 @@
+name: Build GTAProbe v3
+
+on:
+  pull_request:
+    branches: [ main ]
+    paths:
+      - "chatgpt_gtaprobe/**"
+      - ".github/workflows/chatgpt-gtaprobe-v3.yml"
+
+permissions:
+  contents: read
+
+jobs:
+  build-x86:
+    runs-on: windows-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Configure x86 Release
+        run: cmake -S chatgpt_gtaprobe -B chatgpt_gtaprobe/build -A Win32
+
+      - name: Build x86 Release
+        run: cmake --build chatgpt_gtaprobe/build --config Release --parallel
+
+      - name: Stage artifact and show SHA256
+        shell: pwsh
+        run: |
+          $src = "chatgpt_gtaprobe/build/Release/GTAProbe_v3.asi"
+          if (!(Test-Path $src)) { throw "GTAProbe_v3.asi was not produced" }
+          Copy-Item $src "chatgpt_gtaprobe/GTAProbe_v3.asi" -Force
+          Get-Item "chatgpt_gtaprobe/GTAProbe_v3.asi" | Format-List Name,Length
+          Get-FileHash "chatgpt_gtaprobe/GTAProbe_v3.asi" -Algorithm SHA256 | Format-List
+
+      - uses: actions/upload-artifact@v4
+        with:
+          name: GTAProbe_v3
+          path: |
+            chatgpt_gtaprobe/GTAProbe_v3.asi
+            chatgpt_gtaprobe/README.txt
+          if-no-files-found: error
