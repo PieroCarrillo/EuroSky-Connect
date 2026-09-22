@@ -15,7 +15,8 @@ FetchContent_Declare(
 FetchContent_MakeAvailable(minhook)
 
 add_library(GTAProbe_v3 SHARED GTAProbe.cpp)
-target_compile_definitions(GTAProbe_v3 PRIVATE WIN32_LEAN_AND_MEAN NOMINMAX)
+target_include_directories(GTAProbe_v3 PRIVATE "${minhook_SOURCE_DIR}/include")
+target_compile_definitions(GTAProbe_v3 PRIVATE NOMINMAX)
 target_compile_options(GTAProbe_v3 PRIVATE /W4 /EHsc)
 target_link_libraries(GTAProbe_v3 PRIVATE minhook)
 set_target_properties(GTAProbe_v3 PROPERTIES
